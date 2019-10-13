@@ -1,0 +1,5 @@
+package bazaDanych;
+
+public abstract class Wpis {
+    public abstract String opis();
+}
