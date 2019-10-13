@@ -1,4 +1,4 @@
-package bazaDanych;
+package day1.BibliotekaPlytCD.bazaDanych;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

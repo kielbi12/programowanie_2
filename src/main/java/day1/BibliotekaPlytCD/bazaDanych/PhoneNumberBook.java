@@ -1,4 +1,4 @@
-package bazaDanych;
+package day1.BibliotekaPlytCD.bazaDanych;
 
 import java.util.Map;
 import java.util.TreeMap;

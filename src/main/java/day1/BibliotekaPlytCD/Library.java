@@ -1,13 +1,11 @@
-package BibliotekaPlytCD;
+package day1.BibliotekaPlytCD;
 
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

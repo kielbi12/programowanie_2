@@ -1,4 +1,4 @@
-package BibliotekaPlytCD;
+package day1.BibliotekaPlytCD;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

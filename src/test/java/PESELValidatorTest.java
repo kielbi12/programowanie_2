@@ -1,13 +1,14 @@
-import day2.PESELValidator;
+import day2.Validator.PESELValidator;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class PESELValidatorTest {
 
 //    @BeforeEach
 //            void init (){
-//        day2.PESELValidator validator = new day2.PESELValidator();
+//        day2.Validator.PESELValidator validator = new day2.Validator.PESELValidator();
 //    }
 
 

@@ -1,4 +1,4 @@
-package BibliotekaPlytCD;
+package day1.BibliotekaPlytCD;
 
 
 import lombok.AllArgsConstructor;
