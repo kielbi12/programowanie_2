@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 
-public class Warehouse {
+public class Warehouse implements FirmTypes<Warehouse> {
 
     private final List<Package> PACKAGE_LIST = new ArrayList<>();
     private Long idWarehouse;
@@ -27,4 +27,8 @@ public class Warehouse {
 
     }
 
+    @Override
+    public boolean compareType(Warehouse object) {
+        return idWarehouse.equals(object.getIdWarehouse());
+    }
 }

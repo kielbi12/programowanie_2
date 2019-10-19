@@ -8,13 +8,17 @@ import lombok.Getter;
 @AllArgsConstructor
 
 
-public class Client {
+public class Client implements FirmTypes<Client> {
 
     private String firstname;
     private String surname;
-    private String adress;
+    private Adress adress;
     private String telefonNumber;
     private Long idClient;
 
 
+    @Override
+    public boolean compareType(Client object) {
+        return idClient.equals(object.getIdClient());
+    }
 }

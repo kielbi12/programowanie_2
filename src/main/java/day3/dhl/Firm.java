@@ -5,7 +5,6 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 
 @Getter
@@ -14,73 +13,40 @@ public class Firm {
     private final List<Warehouse> warehouseList = new ArrayList<>();
     private final List<Client> clientList = new ArrayList<>();
     private final List<Courier> courierList = new ArrayList<>();
+    private final FirmHelper<Warehouse> firmHelper = new FirmHelper<>();
+    private final FirmHelper<Client> firmHelper1 = new FirmHelper<>();
+    private final FirmHelper<Courier> firmHelper2 = new FirmHelper<>();
 
 
     public void addWarehouse(Warehouse warehouse) {
-        boolean isWarehouseExist = warehouseList.stream()
-                .filter(a -> a.getAdressWarehouse().equals(warehouse.getAdressWarehouse()))
-                .findAny()
-                .isPresent();
-        if (!isWarehouseExist) {
-            warehouseList.add(warehouse);
-        }
+
+        firmHelper.add(warehouseList, warehouse);
     }
 
     public void addClient(Client client) {
-        boolean isClientExist = clientList.stream()
-                .filter(a -> a.getIdClient().equals(client.getIdClient()))
-                .findAny()
-                .isPresent();
-        if (!isClientExist) {
-            clientList.add(client);
 
-        }
+        firmHelper1.add(clientList, client);
     }
 
     public void addCourier(Courier courier) {
-        boolean isCourierExist = courierList.stream()
-                .filter(a -> a.getIdCourier().equals(courier.getIdCourier()))
-                .findAny()
-                .isPresent();
-        if (!isCourierExist) {
-            courierList.add(courier);
-        }
+
+        firmHelper2.add(courierList, courier);
     }
 
     public void removeWarehouse(Warehouse warehouse) {
 
-        Optional<Warehouse> isWarehouseExist = warehouseList.stream()
-                .filter(a -> a.getAdressWarehouse().equals(warehouse.getAdressWarehouse()))
-                .findAny();
-        if (!isWarehouseExist.isPresent()) {
-            throw new IllegalArgumentException("Nie ma takiego magazynu");
-        } else {
-            warehouseList.remove(isWarehouseExist.get());
-        }
+        firmHelper.remove(warehouseList, warehouse);
+
     }
 
     public void removeClient(Client client) {
-        Optional<Client> isClientExist = clientList.stream()
-                .filter(a -> a.getIdClient().equals(client.getIdClient()))
-                .findAny();
-        if (!isClientExist.isPresent()) {
-            throw new IllegalArgumentException("Nie ma takiego klienta");
-        } else {
-            clientList.remove(isClientExist.get());
-        }
-
+        firmHelper1.remove(clientList, client);
 
     }
 
     public void removeCourier(Courier courier) {
-        Optional<Courier> isCourierExist = courierList.stream()
-                .filter(a -> a.getIdCourier().equals(courier.getIdCourier()))
-                .findAny();
-        if (!isCourierExist.isPresent()) {
-            throw new IllegalArgumentException("Nie ma takiego kuriera");
-        } else {
-            courierList.remove(isCourierExist.get());
-        }
+
+        firmHelper2.remove(courierList, courier);
     }
 
 }

@@ -23,5 +23,39 @@ class FirmTest {
 
     }
 
+    @Test
+    public void testAddCourier() {
+        //given
+        Firm firm = new Firm();
+        Courier courier = new Courier("Adam", "Mickiewicz", "532432532", 20L);
 
+        //when
+        firm.addCourier(courier);
+
+        //then
+        Courier courier1 = new Courier("Adam", "Mickiewicz", "532432532", 20L);
+        firm.removeCourier(courier1);
+        assertEquals(0, firm.getCourierList().size());
+
+    }
+
+    @Test
+    public void testAddClient() {
+        //given
+        Firm firm = new Firm();
+        Adress adressClient = new Adress("Lubartowska", "20-144", "Lublin", 66);
+        Client client = new Client("Adam", "Mickiewicz", adressClient, "643624363", 20L);
+
+        //when
+        firm.addClient(client);
+
+        //then
+        Client client1 = new Client("Adam", "Mickiewicz", adressClient, "643624363", 20L);
+        firm.removeClient(client);
+        assertEquals(0, firm.getCourierList().size());
+
+
+    }
 }
+
+

@@ -9,10 +9,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Courier {
+public class Courier implements FirmTypes<Courier> {
 
     private String firstname;
     private String surname;
     private String telefonNumber;
     private Long idCourier;
+
+    @Override
+    public boolean compareType(Courier object) {
+        return idCourier.equals(object.getIdCourier());
+    }
 }
